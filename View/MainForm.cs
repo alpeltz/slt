@@ -93,7 +93,8 @@ namespace SourceLiveTimer.View
             RunView.Add(sumOfBestUI);
             RunView.Add(currentDemoUI);
             RunView.Add(runNameUI);
-
+            RunView.Add(bestPossibleTimeUI1);
+            
             LoadCategories();
             LoadSettings();
         }

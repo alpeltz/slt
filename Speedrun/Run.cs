@@ -286,6 +286,24 @@ namespace SourceLiveTimer.Speedrun
             }
             return sumOfBest;
         }
+        
+        public int? GetBestPossibleTime()
+        {
+            int? bestPossibleTime = 0;
+            foreach (Split split in this)
+            {
+                //#if split index less than current, add split time, else add best
+                if (IndexOf(split) <= CurrentSplitIndex)
+                {
+                    bestPossibleTime += split.LiveSegment;
+                }
+                else
+                {
+                    bestPossibleTime += split.BestSegment;
+                }
+            }
+            return bestPossibleTime;
+        }
 
         public bool IsPersonalBest()
         {

@@ -53,12 +53,14 @@
             this.sumOfBestUI = new SourceLiveTimer.View.SumOfBestUI();
             this.currentDemoUI = new SourceLiveTimer.View.CurrentDemoUI();
             this.runNameUI = new SourceLiveTimer.View.RunNameUI();
+            this.bestPossibleTimeUI1 = new SourceLiveTimer.View.BestPossibleTimeUI();
             this.contextMenuStrip.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip
             // 
+            this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.demoDirectoryToolStripMenuItem,
             this.resetToolStripMenuItem,
@@ -71,12 +73,12 @@
             this.toolStripMenuItem2,
             this.quitToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(158, 192);
+            this.contextMenuStrip.Size = new System.Drawing.Size(185, 208);
             // 
             // demoDirectoryToolStripMenuItem
             // 
             this.demoDirectoryToolStripMenuItem.Name = "demoDirectoryToolStripMenuItem";
-            this.demoDirectoryToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.demoDirectoryToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.demoDirectoryToolStripMenuItem.Text = "Demo Directory";
             this.demoDirectoryToolStripMenuItem.Click += new System.EventHandler(this.DemoDirectoryToolStripMenuItem_Click);
             // 
@@ -84,20 +86,20 @@
             // 
             this.resetToolStripMenuItem.Enabled = false;
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.ResetToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(154, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 6);
             // 
             // editSplitsToolStripMenuItem
             // 
             this.editSplitsToolStripMenuItem.Enabled = false;
             this.editSplitsToolStripMenuItem.Name = "editSplitsToolStripMenuItem";
-            this.editSplitsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.editSplitsToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.editSplitsToolStripMenuItem.Text = "Edit Splits";
             this.editSplitsToolStripMenuItem.Click += new System.EventHandler(this.EditSplitsToolStripMenuItem_Click);
             // 
@@ -108,33 +110,33 @@
             this.fromDemosToolStripMenuItem,
             this.toolStripMenuItem3});
             this.openSplitsToolStripMenuItem.Name = "openSplitsToolStripMenuItem";
-            this.openSplitsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.openSplitsToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.openSplitsToolStripMenuItem.Text = "Open Splits";
             // 
             // openSplitsFromFileToolStripMenuItem
             // 
             this.openSplitsFromFileToolStripMenuItem.Name = "openSplitsFromFileToolStripMenuItem";
-            this.openSplitsFromFileToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.openSplitsFromFileToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.openSplitsFromFileToolStripMenuItem.Text = "From File";
             this.openSplitsFromFileToolStripMenuItem.Click += new System.EventHandler(this.OpenSplitsFromFileToolStripMenuItem_Click);
             // 
             // fromDemosToolStripMenuItem
             // 
             this.fromDemosToolStripMenuItem.Name = "fromDemosToolStripMenuItem";
-            this.fromDemosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.fromDemosToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.fromDemosToolStripMenuItem.Text = "From Demos";
             this.fromDemosToolStripMenuItem.Click += new System.EventHandler(this.OpenSplitsFromDemosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(139, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(174, 6);
             // 
             // saveSplitsToolStripMenuItem
             // 
             this.saveSplitsToolStripMenuItem.Enabled = false;
             this.saveSplitsToolStripMenuItem.Name = "saveSplitsToolStripMenuItem";
-            this.saveSplitsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.saveSplitsToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.saveSplitsToolStripMenuItem.Text = "Save Splits";
             this.saveSplitsToolStripMenuItem.Click += new System.EventHandler(this.SaveSplitsToolStripMenuItem_Click);
             // 
@@ -142,7 +144,7 @@
             // 
             this.saveSplitsAsToolStripMenuItem.Enabled = false;
             this.saveSplitsAsToolStripMenuItem.Name = "saveSplitsAsToolStripMenuItem";
-            this.saveSplitsAsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.saveSplitsAsToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.saveSplitsAsToolStripMenuItem.Text = "Save Splits As...";
             this.saveSplitsAsToolStripMenuItem.Click += new System.EventHandler(this.SaveSplitsAsToolStripMenuItem_Click);
             // 
@@ -150,19 +152,19 @@
             // 
             this.closeSplitsToolStripMenuItem.Enabled = false;
             this.closeSplitsToolStripMenuItem.Name = "closeSplitsToolStripMenuItem";
-            this.closeSplitsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.closeSplitsToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.closeSplitsToolStripMenuItem.Text = "Close Splits";
             this.closeSplitsToolStripMenuItem.Click += new System.EventHandler(this.CloseSplitsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -186,21 +188,23 @@
             this.tableLayoutPanel.Controls.Add(this.possibleTimeSaveUI, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.comparisonBestUI, 0, 3);
             this.tableLayoutPanel.Controls.Add(this.sumOfBestUI, 0, 4);
-            this.tableLayoutPanel.Controls.Add(this.currentDemoUI, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.currentDemoUI, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.bestPossibleTimeUI1, 0, 5);
             this.tableLayoutPanel.ForeColor = System.Drawing.Color.White;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 45);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 55);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel.MinimumSize = new System.Drawing.Size(220, 0);
+            this.tableLayoutPanel.MinimumSize = new System.Drawing.Size(293, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.tableLayoutPanel.RowCount = 6;
+            this.tableLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.tableLayoutPanel.RowCount = 7;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(220, 370);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.Size = new System.Drawing.Size(293, 394);
             this.tableLayoutPanel.TabIndex = 7;
             this.tableLayoutPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Borderless_MouseDown);
             this.tableLayoutPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Borderless_MouseMove);
@@ -214,7 +218,7 @@
             this.splitsUI.Location = new System.Drawing.Point(0, 0);
             this.splitsUI.Margin = new System.Windows.Forms.Padding(0);
             this.splitsUI.Name = "splitsUI";
-            this.splitsUI.Size = new System.Drawing.Size(220, 272);
+            this.splitsUI.Size = new System.Drawing.Size(293, 272);
             this.splitsUI.TabIndex = 0;
             // 
             // separatorUI
@@ -224,10 +228,10 @@
             this.separatorUI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.separatorUI.Location = new System.Drawing.Point(0, 272);
             this.separatorUI.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorUI.MaximumSize = new System.Drawing.Size(0, 15);
-            this.separatorUI.MinimumSize = new System.Drawing.Size(0, 15);
+            this.separatorUI.MaximumSize = new System.Drawing.Size(0, 18);
+            this.separatorUI.MinimumSize = new System.Drawing.Size(0, 18);
             this.separatorUI.Name = "separatorUI";
-            this.separatorUI.Size = new System.Drawing.Size(220, 15);
+            this.separatorUI.Size = new System.Drawing.Size(293, 18);
             this.separatorUI.TabIndex = 10;
             // 
             // possibleTimeSaveUI
@@ -235,10 +239,10 @@
             this.possibleTimeSaveUI.AutoSize = true;
             this.possibleTimeSaveUI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.possibleTimeSaveUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.possibleTimeSaveUI.Location = new System.Drawing.Point(0, 287);
+            this.possibleTimeSaveUI.Location = new System.Drawing.Point(0, 290);
             this.possibleTimeSaveUI.Margin = new System.Windows.Forms.Padding(0);
             this.possibleTimeSaveUI.Name = "possibleTimeSaveUI";
-            this.possibleTimeSaveUI.Size = new System.Drawing.Size(220, 20);
+            this.possibleTimeSaveUI.Size = new System.Drawing.Size(293, 20);
             this.possibleTimeSaveUI.TabIndex = 9;
             // 
             // comparisonBestUI
@@ -246,10 +250,10 @@
             this.comparisonBestUI.AutoSize = true;
             this.comparisonBestUI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.comparisonBestUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comparisonBestUI.Location = new System.Drawing.Point(0, 307);
+            this.comparisonBestUI.Location = new System.Drawing.Point(0, 310);
             this.comparisonBestUI.Margin = new System.Windows.Forms.Padding(0);
             this.comparisonBestUI.Name = "comparisonBestUI";
-            this.comparisonBestUI.Size = new System.Drawing.Size(220, 20);
+            this.comparisonBestUI.Size = new System.Drawing.Size(293, 20);
             this.comparisonBestUI.TabIndex = 9;
             // 
             // sumOfBestUI
@@ -257,10 +261,10 @@
             this.sumOfBestUI.AutoSize = true;
             this.sumOfBestUI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.sumOfBestUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sumOfBestUI.Location = new System.Drawing.Point(0, 327);
+            this.sumOfBestUI.Location = new System.Drawing.Point(0, 330);
             this.sumOfBestUI.Margin = new System.Windows.Forms.Padding(0);
             this.sumOfBestUI.Name = "sumOfBestUI";
-            this.sumOfBestUI.Size = new System.Drawing.Size(220, 20);
+            this.sumOfBestUI.Size = new System.Drawing.Size(293, 20);
             this.sumOfBestUI.TabIndex = 8;
             // 
             // currentDemoUI
@@ -268,10 +272,10 @@
             this.currentDemoUI.AutoSize = true;
             this.currentDemoUI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.currentDemoUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.currentDemoUI.Location = new System.Drawing.Point(0, 347);
+            this.currentDemoUI.Location = new System.Drawing.Point(0, 370);
             this.currentDemoUI.Margin = new System.Windows.Forms.Padding(0);
             this.currentDemoUI.Name = "currentDemoUI";
-            this.currentDemoUI.Size = new System.Drawing.Size(220, 20);
+            this.currentDemoUI.Size = new System.Drawing.Size(293, 20);
             this.currentDemoUI.TabIndex = 11;
             // 
             // runNameUI
@@ -279,27 +283,39 @@
             this.runNameUI.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.runNameUI.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.runNameUI.ForeColor = System.Drawing.Color.White;
-            this.runNameUI.Location = new System.Drawing.Point(21, 9);
+            this.runNameUI.Location = new System.Drawing.Point(28, 11);
+            this.runNameUI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.runNameUI.Name = "runNameUI";
-            this.runNameUI.Size = new System.Drawing.Size(178, 19);
+            this.runNameUI.Size = new System.Drawing.Size(237, 23);
             this.runNameUI.TabIndex = 6;
             this.runNameUI.Text = "Source Live Timer";
             this.runNameUI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bestPossibleTimeUI1
+            // 
+            this.bestPossibleTimeUI1.AutoSize = true;
+            this.bestPossibleTimeUI1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bestPossibleTimeUI1.Location = new System.Drawing.Point(0, 350);
+            this.bestPossibleTimeUI1.Margin = new System.Windows.Forms.Padding(0);
+            this.bestPossibleTimeUI1.Name = "bestPossibleTimeUI1";
+            this.bestPossibleTimeUI1.Size = new System.Drawing.Size(278, 20);
+            this.bestPossibleTimeUI1.TabIndex = 12;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.ClientSize = new System.Drawing.Size(220, 414);
+            this.ClientSize = new System.Drawing.Size(293, 510);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.runNameUI);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -336,6 +352,6 @@
         private ComparisonBestUI comparisonBestUI;
         private System.Windows.Forms.ToolStripMenuItem fromDemosToolStripMenuItem;
         private CurrentDemoUI currentDemoUI;
-
+        private BestPossibleTimeUI bestPossibleTimeUI1;
     }
 }

@@ -11,7 +11,7 @@ using SourceLiveTimer.Util;
 
 namespace SourceLiveTimer.View
 {
-    partial class SumOfBestUI : UserControl, RunViewComponent
+    partial class BestPossibleTimeUI : UserControl, RunViewComponent
     {
         private Run run;
 
@@ -21,33 +21,33 @@ namespace SourceLiveTimer.View
         private Color SUM_OF_BEST_TEXT_COLOR = System.Drawing.Color.White;
         private TimeFormatter TIME_FORMATTER = new FancyTimeFormatter("-");
 
-        public SumOfBestUI()
+        public BestPossibleTimeUI()
         {
             InitializeComponent();
-            this.sumOfBestTextLabel.Font = SUM_OF_BEST_TEXT_FONT;
-            this.sumOfBestTimeLabel.Font = SUM_OF_BEST_TIME_FONT;
-            this.sumOfBestTextLabel.ForeColor = SUM_OF_BEST_TEXT_COLOR;
-            this.sumOfBestTimeLabel.ForeColor = SUM_OF_BEST_TEXT_COLOR;
+            this.BestPossibleTimeTextLabel.Font = SUM_OF_BEST_TEXT_FONT;
+            this.BestPossibleTimeTimeLabel.Font = SUM_OF_BEST_TIME_FONT;
+            this.BestPossibleTimeTextLabel.ForeColor = SUM_OF_BEST_TEXT_COLOR;
+            this.BestPossibleTimeTimeLabel.ForeColor = SUM_OF_BEST_TEXT_COLOR;
             this.tableLayoutPanel.RowStyles[0].Height = SUM_OF_BEST_HEIGHT;
         }
 
         public void LoadRun(Run run)
         {
-           // sumOfBestTimeLabel.Text = "hello";
+           // BestPossibleTimeTimeLabel.Text = "Hello";
             this.run = run;
             UpdateComponent();
         }
 
         public void UpdateComponent()
         {
-            int? sumOfBest = run.GetSumOfBest();
-            sumOfBestTimeLabel.Text = TIME_FORMATTER.FormatTicks(sumOfBest, run.Category.TicksPerSecond);
+            int? BestPossibleTime = run.GetBestPossibleTime();
+            BestPossibleTimeTimeLabel.Text = TIME_FORMATTER.FormatTicks(BestPossibleTime, run.Category.TicksPerSecond);
         }
 
         public void UnloadRun()
         {
             run = null;
-            sumOfBestTimeLabel.Text = TIME_FORMATTER.NullTime;
+            BestPossibleTimeTimeLabel.Text = TIME_FORMATTER.NullTime;
         }        
 
     }

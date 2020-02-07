@@ -78,8 +78,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.3\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -100,10 +100,6 @@
     <Compile Include="Demo\GameHandler\Portal2CoopGameHandler.cs" />
     <Compile Include="Demo\GameHandler\Portal2SpGameHandler.cs" />
     <Compile Include="Demo\GameHandler\PortalGameHandler.cs" />
-    <Compile Include="Misc\SourceSplit\GameMemory.cs" />
-    <Compile Include="Misc\SourceSplit\Program.cs" />
-    <Compile Include="Misc\SourceSplit\SafeNativeMethods.cs" />
-    <Compile Include="Misc\SourceSplit\SignatureScanner.cs" />
     <Compile Include="Misc\SourceTimer\SourceTimer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +120,12 @@
       <DependentUpon>EditSplitsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EditSplitsForm\OnPasteEvtArgs.cs" />
+    <Compile Include="View\RunViewComponent\BestPossibleTime\BestPossibleTimeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RunViewComponent\BestPossibleTime\BestPossibleTimeUI.Designer.cs">
+      <DependentUpon>BestPossibleTimeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RunViewComponent\CurrentDemo\CurrentDemoUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +204,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\RunViewComponent\BestPossibleTime\BestPossibleTimeUI.resx">
+      <DependentUpon>BestPossibleTimeUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RunViewComponent\CompoundRunViewComponent.resx">
       <DependentUpon>CompoundRunViewComponent.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,7 +232,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
